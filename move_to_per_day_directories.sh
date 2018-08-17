@@ -1,6 +1,8 @@
 #!/bin/bash
-for f in *; do
-  if [[ $f = *".tsv.gz" ]]; then
-    echo "It's there!"
+for file in *; do
+  if [[ $file = *".tsv.gz" ]]; then
+    dir="dt="${file:0:10}
+    mkdir -p $dir
+    mv $file $dir/
   fi
 done
